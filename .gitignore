@@ -98,6 +98,11 @@ __pypackages__/
 celerybeat-schedule
 celerybeat.pid
 
+# secrets
+secrets*
+
+# any file in current directory
+./*
 # SageMath parsed files
 *.sage.py
 
