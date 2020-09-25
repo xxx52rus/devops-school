@@ -1,3 +1,4 @@
 #!/bin/sh -l
 
-echo "ACTION 1.2 RUNNING"
+echo "EXECUTING PYTHON SCRIPT..."
+python3 /main.py
