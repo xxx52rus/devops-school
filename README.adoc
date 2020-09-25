@@ -4,12 +4,8 @@
 
 ### Git - log
 
-[TIP]
-It's possible to use emojis as admonition icons on GitHub.
+"A Dog" = git log --all --decorate --oneline --graph `git log --all --decorate --oneline --graph`
 
-```sh
-$ git log --all --decorate --oneline --graph
-```
 image:images/git-log.png[width=600px]
 image:images/dog.jpg[width=600px]
 
