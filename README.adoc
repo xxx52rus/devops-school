@@ -1,8 +1,8 @@
 # Git – essentials (extended)
 
 ### Git - log
-TIP:  
-```sh
+:icons: font
+TIP: ```sh
 $ git log --all --decorate --oneline --graph
 ```
 image:images/git-log.png[width=600px]
