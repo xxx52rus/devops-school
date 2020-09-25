@@ -349,13 +349,13 @@ Now you can push without credentials prompt `git push origin master`
 
 ### Git - contributing
 
-####Fork
+#### Fork
 
 image:images/fork.png[size:50px]
 
 If you want to contribute to an existing project to which you don’t have push access, you can “fork” the project. When you “fork” a project, GitHub will make a copy of the project that is entirely yours; it lives in your namespace, and you can push to it.
 
-####Pull Request
+#### Pull Request
 
 image:images/pr.png[size:50px]
 
