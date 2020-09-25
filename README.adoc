@@ -1,5 +1,3 @@
-:icons: font
-
 # Git – essentials (extended)
 
 ### Git - log
@@ -253,3 +251,14 @@ The following paths are ignored by one of your .gitignore files:
 secrets_01.conf
 Use -f if you really want to add them.
 ```
+
+# Git – working with remote repositories
+
+### Git - protocols
+
+Protocol | Description
+----------------------
+SSH | SSH simple, encrypted. SSH is that it doesn’t support anonymous. Predicaments with proxy may occur.
+HTTP | Encrypted. Providing your credentials is sometimes more complicated than using keys over SSH.
+GIT | Unencrypted, no authentication. Complicated. The fastest network transfer protocol available. Usually works as read-only along with HTTP/SSH for push.
+Local | 
