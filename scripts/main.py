@@ -1,1 +1,1 @@
-print("PYTHON: ACTION 1.2")
+print("PRINT FROM PYTHON: ACTION 1.2")
