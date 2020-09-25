@@ -13,7 +13,7 @@ image:images/dog.jpg[width=600px]
 
 The git cherry-pick command is used to take the change introduced in a single Git commit and try to re-introduce it as a new commit on the branch you’re currently on. This can be useful to only take one or two commits from a branch individually rather than merging in the branch which takes all the changes.
 
-
+History from master branch:
 ```sh
 $ git branch
   feature-text-branch
@@ -39,7 +39,7 @@ $ git log --all --decorate --oneline --graph
 * 65f5aa9 001
 * f86c164 Initial commit
 ```
-
+History from feature-text-branch:
 ```sh
 $ git checkout feature-text-branch
 Switched to branch 'feature-text-branch'
@@ -65,8 +65,8 @@ $ git log --all --decorate --oneline --graph
 * f86c164 Initial commit
 ```
 
-Showing difference
-
+Showing difference:
+ - between ce52528 and 7e365d0
 ```sh
 $ git diff ce52528 7e365d0
 diff --git a/deleteme.001 b/deleteme.001
@@ -93,7 +93,7 @@ index 902ed6b..598e7c8 100644
 +I can write sentences now. Several in a row. 03.
 +
 ```
-
+- between ce52528 and 9dc9fbd
 ```sh
 $ git diff ce52528 9dc9fbd
 diff --git a/deleteme.001 b/deleteme.001
@@ -197,4 +197,48 @@ $ git log --all --decorate --oneline --graph
 * 96154ba +7
 * a86615b +6
 …
+```
+if you need to make changes  - you will generally want to create a branch:
+```sh
+$ git checkout v1.0 -b v1.0
+Switched to a new branch 'v1.0'
+$ git log --all --decorate --oneline --graph
+* fa1efd1 (tag: v1.1, origin/master, origin/HEAD, master) text added
+| * 7e365d0 (origin/feature-text-branch) sentences feature added
+| * 8792cfb long phrases added
+| * 9dc9fbd text added
+|/
+*   ce52528 Merge pull request #1 from n1653/super-feature
+|\
+| * 22efd50 (HEAD -> v1.0, tag: v1.0) super line added
+|/
+* 6dec4d5 +10
+* f22f240 +9
+…
+
+$ git branch --list
+  master
+* v1.0
+```
+
+### Git - ignore
+ - Patterns read from the command line for those commands that support them.
+ - Patterns read from a .gitignore file in the same directory as the path, or in any parent directory, with patterns in the higher level files (up to the toplevel of the work tree) being overridden by those in lower level files down to the directory containing the file. These patterns match relative to the location of the .gitignore file. A project normally includes such .gitignore files in its repository, containing patterns for files generated as part of the project build.
+ - Patterns read from $GIT_DIR/info/exclude.
+ - Patterns read from the file specified by the configuration variable core.excludesFile
+
+```sh
+$ echo “# secrets
+secrets*
+>> ./.gitignore
+
+$ git add ./secrets_01.conf
+The following paths are ignored by one of your .gitignore files:
+secrets_01.conf
+Use -f if you really want to add them.
+
+$ git add ./*
+The following paths are ignored by one of your .gitignore files:
+secrets_01.conf
+Use -f if you really want to add them.
 ```
