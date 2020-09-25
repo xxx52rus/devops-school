@@ -17,4 +17,4 @@ jobs:
           uses: ./.github/actions/action_1.2
         - name: 1.3 DOWNLOAD ARTIFACT
           run: |
-            ls -lah /home/runner/work/_temp/_github_workflow
+            ls -lah /home/runner/work/devops-school/devops-school
