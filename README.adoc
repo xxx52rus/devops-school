@@ -115,7 +115,10 @@ Cherry-pick applied, log from master branch, note where the HEAD is:
 ```sh
 $ git cherry-pick 9dc9fbd
 [master 0d2d9af] text added
- 1 file changed, 4 insertions(+)$ git log --all --decorate --oneline --graph
+ 1 file changed, 4 insertions(+)
+```
+```sh
+$ git log --all --decorate --oneline --graph
 * 0d2d9af (HEAD, master) text added
 | * 7e365d0 (origin/feature-text-branch) sentences feature added
 | * 8792cfb (feature-text-branch) long phrases added
@@ -142,6 +145,8 @@ Log from feature-text-branch, note where the HEAD is:
 ```sh
 $ git checkout feature-text-branch
 Switched to branch 'feature-text-branch'
+```
+```sh
 $ git log --all --decorate --oneline --graph
 * 0d2d9af (master) text added
 | * 7e365d0 (origin/feature-text-branch) sentences feature added
@@ -171,12 +176,16 @@ $ git log --all --decorate --oneline --graph
 A lightweight tag is very much like a branch that doesn’t change — it’s just a pointer to a specific commit.
 ```sh
 $ git tag -a v1.1 fa1efd1 -m "release v1.1“
+```
+```sh
 $ git push origin v1.1
 ```
 
 Annotated tags, however, are stored as full objects in the Git database. They’re checksummed; contain the tagger name, email, and date; have a tagging message; and can be signed and verified with GNU Privacy Guard (GPG).
 ```sh
 $ git tag v1.0 22efd50
+```
+```sh
 $ git push origin v1.0
 ```
 History
@@ -203,6 +212,8 @@ if you need to make changes  - you will generally want to create a branch:
 ```sh
 $ git checkout v1.0 -b v1.0
 Switched to a new branch 'v1.0'
+```
+```sh
 $ git log --all --decorate --oneline --graph
 * fa1efd1 (tag: v1.1, origin/master, origin/HEAD, master) text added
 | * 7e365d0 (origin/feature-text-branch) sentences feature added
@@ -232,12 +243,14 @@ $ git branch --list
 $ echo "
 # secrets
 secrets*" >> ./.gitignore
-
+```
+```sh
 $ git add ./secrets_01.conf
 The following paths are ignored by one of your .gitignore files:
 secrets_01.conf
 Use -f if you really want to add them.
-
+```
+```sh
 $ git add ./*
 The following paths are ignored by one of your .gitignore files:
 secrets_01.conf
