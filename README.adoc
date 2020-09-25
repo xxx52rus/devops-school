@@ -278,66 +278,74 @@ Usually works as read-only along with HTTP/SSH for push.
 |
 |===
 
-
-|===
-|Master branch |sad
-
-|History from master branch:
+To change protocol clone repository and start working with the local copy:
 ```sh
-$ git branch
-  feature-text-branch
-* master
+$ git clone https://github.com/n1654/devops-school
+$ cd ./devops-school/
+$ git remote -v
+origin  https://github.com/n1654/devops-school (fetch)
+origin  https://github.com/n1654/devops-school (push)
 ```
-|History from feature-text-branch:
+Chage 
 ```sh
-$ git checkout feature-text-branch
-Switched to branch 'feature-text-branch'
+$ git remote set-url origin git+ssh://git@github.com/n1654/devops-school
+$ git remote -v
+origin  git+ssh://git@github.com/n1654/devops-school (fetch)
+origin  git+ssh://git@github.com/n1654/devops-school (push)
 ```
 
-|```sh
-$ git log --all --decorate --oneline --graph
-* 7e365d0 (origin/feature-text-branch) sentences feature added
-* 8792cfb (feature-text-branch) long phrases added
-* 9dc9fbd text added
-*   ce52528 (HEAD, origin/master, origin/HEAD, master) Merge pull request #1 from n1653/super-feature
-|\
-| * 22efd50 super line added
-|/
-* 6dec4d5 +10
-* f22f240 +9
-* dce3cc0 +8
-* d8fedcb +8
-* 96154ba +7
-* a86615b +6
-* d32fdef +5
-* f7d1d39 +4
-* f34d14c +3
-* 47e9fea +2
-* 65f5aa9 001
-* f86c164 Initial commit
+### Git - Athentication
+#### Windows
+Download and install [Git Credential Manager for Windows](https://github.com/Microsoft/Git-Credential-Manager-for-Windows)
+```sh
+> git config --list | findstr "cred"
+credential.helper=manager
 ```
-|```sh
-$ git log --all --decorate --oneline --graph
-* 7e365d0 (origin/feature-text-branch) sentences feature added
-* 8792cfb (HEAD, feature-text-branch) long phrases added
-* 9dc9fbd text added
-*   ce52528 (origin/master, origin/HEAD, master) Merge pull request #1 from n1653/super-feature
-|\
-| * 22efd50 super line added
-|/
-* 6dec4d5 +10
-* f22f240 +9
-* dce3cc0 +8
-* d8fedcb +8
-* 96154ba +7
-* a86615b +6
-* d32fdef +5
-* f7d1d39 +4
-* f34d14c +3
-* 47e9fea +2
-* 65f5aa9 001
-* f86c164 Initial commit
+#### Mac
+osxkeychain - is working by default
+```sh
+% git config --list         
+credential.helper=osxkeychain
+user.name=Dmitrii Overchenko
+user.email=dov@ubiqube.com
 ```
+#### Using ssh-agent
+Generate keys:
+```sh
+$ ssh-keygen -o
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/centos/.ssh/id_rsa): git-devops-school
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in git-devops-school.
+Your public key has been saved in git-devops-school.pub.
+```
+change permissions:
+```sh
+$ chmod 400 ./git-devops-school.pub
+```
+verify protocols:
+```sh
+$ cd devops-school
+$ git remote -v
+origin  git+ssh://git@github.com/n1654/devops-school (fetch)
+origin  git+ssh://git@github.com/n1654/devops-school (push)
+```
+start the ssh-agent in the background
+```sh
+$ eval "$(ssh-agent -s)"
+Agent pid 23560
+```
+Add your SSH private key to the ssh-agent
+```sh
+$ ssh-add ../git-devops-school
+```
+Login
+```sh
+$ ssh -T git@github.com
+Hi n1654! You've successfully authenticated, but GitHub does not provide shell access.
+```
+Now you can push without credentials prompt `git push origin master`
 
+### Git - contributing
 
-|===
