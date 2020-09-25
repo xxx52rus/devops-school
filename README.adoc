@@ -178,12 +178,12 @@ $ git log --all --decorate --oneline --graph
 ### Git - tagging
 
 A lightweight tag is very much like a branch that doesn’t change — it’s just a pointer to a specific commit.
-Tag certain commit: `git tag v1.0 22efd50`
-Push it: `git push origin v1.0`
+Tag certain commit: `git tag v1.0 22efd50`.
+Push it: `git push origin v1.0`.
 
 Annotated tags, however, are stored as full objects in the Git database. They’re checksummed; contain the tagger name, email, and date; have a tagging message; and can be signed and verified with GNU Privacy Guard (GPG).
-Tag with annotation certain commti: `git tag -a v1.1 fa1efd1 -m "release v1.1"`
-Push it: `git push origin v1.1`
+Tag certain commit with annotation: `git tag -a v1.1 fa1efd1 -m "release v1.1"`.
+Push it: `git push origin v1.1`.
 
 History
 ```sh
