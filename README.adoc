@@ -4,7 +4,7 @@
 
 ### Git - log
 
-"A Dog" = git log --all --decorate --oneline --graph `git log --all --decorate --oneline --graph`
+"A Dog" = `git log --all --decorate --oneline --graph`
 
 image:images/git-log.png[width=600px]
 image:images/dog.jpg[width=600px]
@@ -65,3 +65,136 @@ $ git log --all --decorate --oneline --graph
 * f86c164 Initial commit
 ```
 
+Showing difference
+
+```sh
+$ git diff ce52528 7e365d0
+diff --git a/deleteme.001 b/deleteme.001
+index 902ed6b..598e7c8 100644
+--- a/deleteme.001
++++ b/deleteme.001
+@@ -10,3 +10,18 @@
+ 09
+ 10
+ new_super_line
++text_01
++text_02
++text_03
++text_04
++new_super_wordy_line
++long_phrase_allowed_now_01
++long_phrase_allowed_now_02
++long_phrase_allowed_now_03
++long_phrase_allowed_now_04
++long_phrase_allowed_now_05
++long_phrase_allowed_now_06
++I can write sentences now. Several in a row. 01.
++I can write sentences now. Several in a row. 02.
++I can write sentences now. Several in a row. 03.
++
+```
+
+```sh
+$ git diff ce52528 9dc9fbd
+diff --git a/deleteme.001 b/deleteme.001
+index 902ed6b..5d3cd62 100644
+--- a/deleteme.001
++++ b/deleteme.001
+@@ -10,3 +10,7 @@
+ 09
+ 10
+ new_super_line
++text_01
++text_02
++text_03
++text_04
+```
+
+Cherry-pick applied, log from master branch, note where the HEAD is:
+```sh
+$ git cherry-pick 9dc9fbd
+[master 0d2d9af] text added
+ 1 file changed, 4 insertions(+)$ git log --all --decorate --oneline --graph
+* 0d2d9af (HEAD, master) text added
+| * 7e365d0 (origin/feature-text-branch) sentences feature added
+| * 8792cfb (feature-text-branch) long phrases added
+| * 9dc9fbd text added
+|/
+*   ce52528 (origin/master, origin/HEAD) Merge pull request #1 from n1653/super-feature
+|\
+| * 22efd50 super line added
+|/
+* 6dec4d5 +10
+* f22f240 +9
+* dce3cc0 +8
+* d8fedcb +8
+* 96154ba +7
+* a86615b +6
+* d32fdef +5
+* f7d1d39 +4
+* f34d14c +3
+* 47e9fea +2
+* 65f5aa9 001
+* f86c164 Initial commit
+```
+Log from feature-text-branch, note where the HEAD is:
+```sh
+$ git checkout feature-text-branch
+Switched to branch 'feature-text-branch'
+$ git log --all --decorate --oneline --graph
+* 0d2d9af (master) text added
+| * 7e365d0 (origin/feature-text-branch) sentences feature added
+| * 8792cfb (HEAD, feature-text-branch) long phrases added
+| * 9dc9fbd text added
+|/
+*   ce52528 (origin/master, origin/HEAD) Merge pull request #1 from n1653/super-feature
+|\
+| * 22efd50 super line added
+|/
+* 6dec4d5 +10
+* f22f240 +9
+* dce3cc0 +8
+* d8fedcb +8
+* 96154ba +7
+* a86615b +6
+* d32fdef +5
+* f7d1d39 +4
+* f34d14c +3
+* 47e9fea +2
+* 65f5aa9 001
+* f86c164 Initial commit
+```
+
+### Git - tagging
+
+A lightweight tag is very much like a branch that doesn’t change — it’s just a pointer to a specific commit.
+```sh
+$ git tag -a v1.1 fa1efd1 -m "release v1.1“
+$ git push origin v1.1
+```
+
+Annotated tags, however, are stored as full objects in the Git database. They’re checksummed; contain the tagger name, email, and date; have a tagging message; and can be signed and verified with GNU Privacy Guard (GPG).
+```sh
+$ git tag v1.0 22efd50
+$ git push origin v1.0
+```
+History
+```sh
+$ git log --all --decorate --oneline --graph
+* fa1efd1 (HEAD -> master, tag: v1.1, origin/master, origin/HEAD) text added
+| * 7e365d0 (origin/feature-text-branch) sentences feature added
+| * 8792cfb long phrases added
+| * 9dc9fbd text added
+|/
+*   ce52528 Merge pull request #1 from n1653/super-feature
+|\
+| * 22efd50 (tag: v1.0) super line added
+|/
+* 6dec4d5 +10
+* f22f240 +9
+* dce3cc0 +8
+* d8fedcb +8
+* 96154ba +7
+* a86615b +6
+…
+```
