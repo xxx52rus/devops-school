@@ -18,6 +18,8 @@ History from master branch:
 $ git branch
   feature-text-branch
 * master
+```
+```sh
 $ git log --all --decorate --oneline --graph
 * 7e365d0 (origin/feature-text-branch) sentences feature added
 * 8792cfb (feature-text-branch) long phrases added
@@ -43,6 +45,8 @@ History from feature-text-branch:
 ```sh
 $ git checkout feature-text-branch
 Switched to branch 'feature-text-branch'
+```
+```sh
 $ git log --all --decorate --oneline --graph
 * 7e365d0 (origin/feature-text-branch) sentences feature added
 * 8792cfb (HEAD, feature-text-branch) long phrases added
@@ -174,20 +178,13 @@ $ git log --all --decorate --oneline --graph
 ### Git - tagging
 
 A lightweight tag is very much like a branch that doesn’t change — it’s just a pointer to a specific commit.
-```sh
-$ git tag -a v1.1 fa1efd1 -m "release v1.1“
-```
-```sh
-$ git push origin v1.1
-```
+Tag certain commit: `git tag v1.0 22efd50`
+Push it: `git push origin v1.0`
 
 Annotated tags, however, are stored as full objects in the Git database. They’re checksummed; contain the tagger name, email, and date; have a tagging message; and can be signed and verified with GNU Privacy Guard (GPG).
-```sh
-$ git tag v1.0 22efd50
-```
-```sh
-$ git push origin v1.0
-```
+Tag with annotation certain commti: `git tag -a v1.1 fa1efd1 -m "release v1.1"`
+Push it: `git push origin v1.1`
+
 History
 ```sh
 $ git log --all --decorate --oneline --graph
