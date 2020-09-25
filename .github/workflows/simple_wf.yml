@@ -17,4 +17,6 @@ jobs:
           uses: ./.github/actions/action_1.2
         - name: 1.3 DOWNLOAD ARTIFACT
           run: |
-            ls -alh
+            git add log.md
+            git commit -m "timestamp updated"
+            git push origin master
