@@ -1,7 +1,8 @@
+:icons: font
+
 # Git – essentials (extended)
 
 ### Git - log
-:icons: font
 
 [TIP]
 It's possible to use emojis as admonition icons on GitHub.
