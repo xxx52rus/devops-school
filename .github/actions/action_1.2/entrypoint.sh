@@ -3,6 +3,9 @@
 echo "EXECUTING PYTHON SCRIPT..."
 python3 /main.py
 
+echo "ls -lah"
+ls -lah
+
 echo "pwd"
 pwd
 
