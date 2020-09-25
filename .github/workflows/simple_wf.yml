@@ -5,12 +5,12 @@ on:
 
 jobs:
 
-    TEST_JOB_01:
+    TIMESTAMP:
         runs-on: ubuntu-latest
 
         steps:
         - uses: actions/checkout@v2
-        - name: 1.1 COPYING FILES
+        - name: 1.1 UPLOADING FILES
           run: |
             cp ./scripts/main.py ./.github/actions/action_1.2/main.py
         - name: 1.2 EXECUTING THE PYTHON SCRIPT
