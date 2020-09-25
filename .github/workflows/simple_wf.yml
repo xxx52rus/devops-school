@@ -13,5 +13,5 @@ jobs:
         - name: 1.1 COPYING FILES
           run: |
             cp ./scripts/main.py ./.github/actions/action_1.2/main.py
-        -name: 1.2 EXECUTING THE PYTHON SCRIPT
-         uses: ./.github/actions/action_1.2
+        - name: 1.2 EXECUTING THE PYTHON SCRIPT
+          uses: ./.github/actions/action_1.2
