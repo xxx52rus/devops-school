@@ -355,7 +355,7 @@ image:images/fork.png[size:50px]
 
 If you want to contribute to an existing project to which you don’t have push access, you can “fork” the project. When you “fork” a project, GitHub will make a copy of the project that is entirely yours; it lives in your namespace, and you can push to it.
 
-#### Pull Request
+#### Pull Request (PR)
 
 image:images/pr.png[size:50px]
 
@@ -368,3 +368,14 @@ image:images/pr.png[size:50px]
 7. The project owner merges or closes the Pull Request.
 8. Sync the updated master back to your fork.
 
+#### Open PR
+
+image:images/open-pr.png[size:600px]
+
+#### Review PR
+
+image:images/review-pr.png[size:600px]
+
+#### Merge PR
+
+image:images/merge-pr.png[size:600px]
