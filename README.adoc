@@ -256,49 +256,24 @@ Use -f if you really want to add them.
 
 ### Git - protocols
 
-Protocol | Description
-----------------------
-SSH | SSH simple, encrypted. SSH is that it doesn’t support anonymous. Predicaments with proxy may occur.
-HTTP | Encrypted. Providing your credentials is sometimes more complicated than using keys over SSH.
-GIT | Unencrypted, no authentication. Complicated. The fastest network transfer protocol available. Usually works as read-only along with HTTP/SSH for push.
-Local | 
-
 |===
-|Style Name |Value |Description
+|Protocol |Description
 
-|AsciiDoc
-|a
-|Supports block-level elements (paragraphs, delimited blocks, and block macros).
-This style effectively creates a nested, standalone AsciiDoc document.
-Implicit attributes such as doctitle from the parent document will be shadowed.
-Custom attributes are inherited.
+|SSH
+|SSH simple, encrypted.
+SSH is that it doesn’t support anonymous.
+Predicaments with proxy may occur.
 
-|Emphasis
-|e
-|Text is italicized
+|HTTP
+|Encrypted.
+Providing your credentials is sometimes more complicated than using keys over SSH.
 
-|Header
-|h
-|Header styles are applied to the column
+|GIT
+|Unencrypted, no authentication.
+Complicated.
+The fastest network transfer protocol available.
+Usually works as read-only along with HTTP/SSH for push.
 
-|Literal
-|l
-|Column content is treated as if it were inside a literal block
-
-|Monospaced
-|m
-|Text is rendered in monospaced font
-
-|None (default style)
-|d
-|Text is handled like a normal paragraph.
-Supports all markup (i.e., inline formatting, inline macros) that is permitted in a paragraph.
-
-|Strong
-|s
-|Text is bolded
-
-|Verse
-|v
-|Column content is treated as if it were inside a verse block
+|Local
+|
 |===
