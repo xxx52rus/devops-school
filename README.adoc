@@ -66,6 +66,7 @@ $ git log --all --decorate --oneline --graph
 ```
 
 Showing difference:
+
  - between ce52528 and 7e365d0
 ```sh
 $ git diff ce52528 7e365d0
@@ -228,9 +229,9 @@ $ git branch --list
  - Patterns read from the file specified by the configuration variable core.excludesFile
 
 ```sh
-$ echo “# secrets
-secrets*
->> ./.gitignore
+$ echo "
+# secrets
+secrets*" >> ./.gitignore
 
 $ git add ./secrets_01.conf
 The following paths are ignored by one of your .gitignore files:
