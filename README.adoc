@@ -4,9 +4,7 @@
 ```sh
 $ git log --all --decorate --oneline --graph
 ```
-image:images/git-log.png
-
-image:images/dog.jpg
+image:images/git-log.png[width=600px] image:images/dog.jpg[width=600px]
 
 ### Git - cherry-pick
 
