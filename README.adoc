@@ -1,10 +1,7 @@
 # Git – essentials (extended)
 
 ### Git - log
-
-ifdef::env-github[]
-:tip-caption: :bulb:
-endif::[]
+:icons: font
 
 [TIP]
 It's possible to use emojis as admonition icons on GitHub.
