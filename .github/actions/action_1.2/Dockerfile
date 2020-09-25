@@ -7,4 +7,5 @@ COPY main.py /main.py
 
 RUN chmod +x /entrypoint.sh
 
+VOLUME ["/tmp"]
 ENTRYPOINT ["/entrypoint.sh"]
