@@ -1,6 +1,7 @@
 # Git – essentials (extended)
 
-### Git - log 
+### Git - log
+TIP:  
 ```sh
 $ git log --all --decorate --oneline --graph
 ```
