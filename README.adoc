@@ -294,7 +294,7 @@ origin  git+ssh://git@github.com/n1654/devops-school (fetch)
 origin  git+ssh://git@github.com/n1654/devops-school (push)
 ```
 
-### Git - Athentication
+### Git - Authentication
 #### Windows
 Download and install [Git Credential Manager for Windows](https://github.com/Microsoft/Git-Credential-Manager-for-Windows)
 ```sh
