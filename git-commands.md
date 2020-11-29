@@ -60,3 +60,19 @@ short HASH - stores first 7 digits
 `origin` - name can be changed, you can work with different repositories thus many pointers may be used.
 
 `git remote show` - shows what's happening with remote repo
+
+## Merge / Commit
+
+`git checkout -b fix13`
+
+`git status`
+
+`touch fix13.txt`
+
+`git add .` - explain dot
+
+`git status`
+
+`git commit -m "Initial commit of fix13 branch"`
+
+`git log --pretty=format:"%h %cd %an '%s'"`
