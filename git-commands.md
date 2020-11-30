@@ -146,7 +146,8 @@ First show that all the files exist
 
 Answer: previous commit hash disapeared (where HEAD was). 
 If someone has already created branch from this commit. Then we'll have commits without parents.
-Git allows workarounding this.
+Git allows workarounding this. 
+Good practice is to have a documented procedure how to edit core files.
 
 ### Git branches
 
