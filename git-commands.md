@@ -181,5 +181,79 @@ git commit -a -m "Wrong commit #1"
 git log --pretty=format:"%h '%s'" -3
 ```
 
-git 
+#### Hard
 
+files removed, commit removed
+
+```sh
+git reset --hard <HASH>
+ls -ltrh
+git log --pretty=format:"%h '%s'" -3
+```
+
+#### Mixed
+
+commit only removed
+
+```sh
+echo "It's a very important thing" > important1.txt
+echo "It's an extremely important thing" > important2.txt
+git status
+git add important1.txt
+git commit -m "Wrong commit #2"
+git log --pretty=format:"%h '%s'" -3
+git reset <LATEST CORRECT COMMIT HASH>
+git log --pretty=format:"%h '%s'" -3
+```
+
+#### Soft
+```sh
+git add .
+git commit -m "Important commit"
+git reset --soft <LATEST CORRECT COMMIT HASH>
+git log --pretty=format:"%h '%s'" -3
+cat important*txt
+git status
+```
+
+```sh
+git commit -m "Important commit 1"
+cat README.txt
+git log --pretty=format:"%h '%s'"
+git checkout <1st COMMIT HASH> README.txt
+```
+
+filesystem remains the same, commits the same, README.txt - replaced
+
+how to return back:
+
+`git reset --hard HEAD` or `git checkout`
+
+```sh
+ls -ltrh
+cat README.txt
+```
+
+#### How to rollback merge
+
+```sh
+git checkout -b wrng
+cat /dev/null > README.txt
+cat README.txt
+echo "1111" > wrng.txt
+git add .
+git commit -m "Wrong"
+git checkout master
+git merge wrng 
+cat README.txt
+git log --graph --oneline --decorate --all -6
+```
+
+Reflogs
+`git reflog -5` all our actions
+
+`git reset --hard HEAD@{1}` - rollback by actions
+
+`git log --graph --oneline --decorate --all -6` - commits still there, files still there, but fast-forward removed
+
+`cat README.txt`
