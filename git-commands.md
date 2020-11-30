@@ -158,3 +158,28 @@ git log --graph --oneline --decorate --all
 ```
 
 pointers disapeared
+
+
+### Reset
+
+```sh
+ls -ltrh
+rm -f file1*txt
+ls -ltrh
+git status
+```
+
+```sh
+git reset --hard HEAD
+ls -ltrh
+git status
+```
+
+```sh
+rm -f file1*txt
+git commit -a -m "Wrong commit #1"
+git log --pretty=format:"%h '%s'" -3
+```
+
+git 
+
