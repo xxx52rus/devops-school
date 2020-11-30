@@ -3,25 +3,27 @@
 
 ## Initialization
 
-`mkdir Test`
-
-`cd Test`
-
-`ls -a`
-
-`git init`
-
-`ls -ltra ./git`
+```sh
+mkdir Test
+cd Test
+ls -a
+git init
+ls -ltra ./git
+```
 
 By default - Working Directory Name is a Repository Name
 
-`git status`
+```sh
+git status
+git stat
+```
+show git tips
 
-`git stat` - show git tips
-
-`touch README.md`
-
-`git status` - UNTRACKED
+```sh
+touch README.md
+git status
+```
+UNTRACKED
 
 `git add ./README.md` - regexp patterns can be used
 
@@ -36,22 +38,24 @@ commit HASH - commit ID, if we need to use this commit then ID should be used.
 
 ## Changing
 
-`echo "This is a Test GIT project" > README.txt`
-
-`git status`
-
-`git commit -a -m "Added README file content"` - sends changed file to repo directly (does not work for new files)
-
-`git status`
+```sh
+echo "This is a Test GIT project" > README.txt
+git status
+git commit -a -m "Added README file content"
+git status
+```
+Commit here - sends changed file to repo directly (does not work for new files)
 
 ## History
 
 `git log`
 short HASH - stores first 7 digits
 
-`git log --pretty=format:"%h %cd %an '%s'"`
-
-`git log --patch -2` - show differences between commits
+```sh
+git log --pretty=format:"%h %cd %an '%s'"
+git log --patch -2
+```
+Show differences between commits
 
 ## Remote branches
 
@@ -65,19 +69,15 @@ short HASH - stores first 7 digits
 
 ### Fast-forward
 
-`git checkout -b fix13`
-
-`git status`
-
-`touch fix13.txt`
-
-`git add .` - explain dot
-
-`git status`
-
-`git commit -m "Initial commit of fix13 branch"`
-
-`git log --pretty=format:"%h %cd %an '%s'"`
+```sh
+git checkout -b fix13
+git status
+touch fix13.txt
+git add .
+git status
+git commit -m "Initial commit of fix13 branch"
+git log --pretty=format:"%h %cd %an '%s'"
+```
 
 `ls -ltrh` - show files in the filesystem for this branch
 
@@ -93,13 +93,12 @@ CAUTION: Do not use branches for content splitting.
 
 ### Simple Three-way (recursive)
 
-`git checkout -b fix14`
-
-`echo "It's Fix 14 branch" > fix14.txt`
-
-`git add .`
-
-`git commit -m "Initial commit for fix14 branch"`
+```sh
+git checkout -b fix14
+echo "It's Fix 14 branch" > fix14.txt
+git add .
+git commit -m "Initial commit for fix14 branch"
+```
 
 `ls -ltrh` - file is here
 
@@ -117,32 +116,34 @@ CAUTION: Do not use branches for content splitting.
 
 One more branch:
 
-`git checkout -b fix14`
-
-`echo "It's Fix 15 branch" > fix15.txt`
-
-`git add .`
-
-`git commit -m "Initial commit for fix15 branch"`
-
-`git checkout master`
-
-`echo "Fix 15 branch was added to the repository" >> README.txt` - adding changes
-
-`git commit -a -m "Added the third line into README.txt"`
-
-`git checkout fix15`
-
-`echo "It's a second line for the file" >> fix15.txt`
-
-`git commit -a -m "Second commit for Fix15 branch"`
-
-`git checkout master`
+```sh
+git checkout -b fix14
+echo "It's Fix 15 branch" > fix15.txt
+git add .
+git commit -m "Initial commit for fix15 branch"
+git checkout master
+echo "Fix 15 branch was added to the repository" >> README.txt
+git commit -a -m "Added the third line into README.txt"
+git checkout fix15
+echo "It's a second line for the file" >> fix15.txt
+git commit -a -m "Second commit for Fix15 branch"
+git checkout master
+```
 
 `git log --graph --oneline --decorate --all -7` - two branches master with commit and Fix15 with two commits
 
-Master << Fix15
-
-`fir rebase Fix15`
+`git rebase Fix15` - Master << Fix15
 
 `git log --graph --oneline --decorate --all -7`- solid line instead of two
+
+Previous commit disapeared, new commit added - both of them have same comments.
+
+### Why it's recommended not doing rebase ?
+
+First show that all the files exist
+
+`ls -ltrh`
+
+Answer: previous commit hash disapeared (where HEAD was). 
+If someone has already created branch from this commit. Then we'll have commits without parents.
+Git allows workarounding this.
