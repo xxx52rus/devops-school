@@ -63,6 +63,8 @@ short HASH - stores first 7 digits
 
 ## Merge / Commit
 
+### Fast-forward
+
 `git checkout -b fix13`
 
 `git status`
@@ -84,3 +86,63 @@ short HASH - stores first 7 digits
 `ls -ltrh` - show filesystem again (snapshots)
 
 CAUTION: Do not use branches for content splitting.
+
+`git merge fix13` see fast-forward
+
+`git log --pretty=format:"%h %cd %an '%s'"`
+
+### Simple Three-way (recursive)
+
+`git checkout -b fix14`
+
+`echo "It's Fix 14 branch" > fix14.txt`
+
+`git add .`
+
+`git commit -m "Initial commit for fix14 branch"`
+
+`ls -ltrh` - file is here
+
+`git checkout master` - no file here
+
+`echo "Two branches was added to this repository" >> README.txt` - adding changes
+
+`git commit -a -m "Added the second line into README.txt"`
+
+`git log --graph --oneline --decorate --all`
+
+`git merge fix14` - editor should appear to insert comment
+
+`git log --graph --oneline --decorate --all` - cons: history mixed up
+
+One more branch:
+
+`git checkout -b fix14`
+
+`echo "It's Fix 15 branch" > fix15.txt`
+
+`git add .`
+
+`git commit -m "Initial commit for fix15 branch"`
+
+`git checkout master`
+
+`echo "Fix 15 branch was added to the repository" >> README.txt` - adding changes
+
+`git commit -a -m "Added the third line into README.txt"`
+
+`git checkout fix15`
+
+`echo "It's a second line for the file" >> fix15.txt`
+
+`git commit -a -m "Second commit for Fix15 branch"`
+
+`git checkout master`
+
+`git log --graph --oneline --decorate --all -7` - two branches master with commit and Fix15 with two commits
+
+Master << Fix15
+
+`fir rebase Fix15`
+
+`git log --graph --oneline --decorate --all -7`- solid line instead of two
