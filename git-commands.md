@@ -147,3 +147,13 @@ First show that all the files exist
 Answer: previous commit hash disapeared (where HEAD was). 
 If someone has already created branch from this commit. Then we'll have commits without parents.
 Git allows workarounding this.
+
+### Git branches
+
+```sh
+git branch -a
+git branch -D fix13 fix14 fix15
+git log --graph --oneline --decorate --all
+```
+
+pointers disapeared
