@@ -76,3 +76,11 @@ short HASH - stores first 7 digits
 `git commit -m "Initial commit of fix13 branch"`
 
 `git log --pretty=format:"%h %cd %an '%s'"`
+
+`ls -ltrh` - show files in the filesystem for this branch
+
+`git checkout master` 
+
+`ls -ltrh` - show filesystem again (snapshots)
+
+CAUTION: Do not use branches for content splitting.
