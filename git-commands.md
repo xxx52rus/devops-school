@@ -61,7 +61,7 @@ Show differences between commits
 
 `origin/master` - differences between local version and remote
 
-`origin` - name can be changed, you can work with different repositories thus many pointers may be used.
+`origin` - name can be changed, you can work with different repositories thus many pointers may be used. Shorthand repository name.
 
 `git remote show` - shows what's happening with remote repo
 
