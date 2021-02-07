@@ -14,13 +14,13 @@ on:
         default: 'readme.txt'
         # Input has to be provided for the workflow to run
         required: true
-#      text_in_file_input:
-#        # Friendly description to be shown in the UI instead of 'name'
-#        description: 'input_text_in_file'
-#        # Default value if no value is explicitly provided
-#        default: 'blah_blah_blah'
-#        # Input has to be provided for the workflow to run
-#        required: true
+      text_in_file_input:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'input_text_in_file'
+        # Default value if no value is explicitly provided
+        default: 'blah_blah_blah'
+        # Input has to be provided for the workflow to run
+        required: true
 
 
 jobs:
