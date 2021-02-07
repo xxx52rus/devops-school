@@ -40,6 +40,8 @@ jobs:
         - name: file_content_changing_to_HOMETASK_value
           run: |
             cat /home/runner/work/devops-school/devops-school/${{ github.event.inputs.file_name }}
+            which echo
+            ls -lah /home/runner/work/devops-school/devops-school/${{ github.event.inputs.file_name }}
 #            chmod 777 /home/runner/work/devops-school/devops-school/${{ github.event.inputs.file_name }}
 #            echo "${{ github.event.inputs.file_name }}">>/home/runner/work/devops-school/devops-school/${{ github.event.inputs.file_name }}
         - name: 1.3 DOWNLOAD ARTIFACT
