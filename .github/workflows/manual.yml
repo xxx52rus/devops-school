@@ -41,4 +41,4 @@ jobs:
               name: log.md
               path: /home/runner/work/devops-school/devops-school/log.md
         - name: Send greeting
-              run: echo "Hello ${{ github.event.inputs.file_name }}"
+          run: echo "Hello ${{ github.event.inputs.file_name }}"
