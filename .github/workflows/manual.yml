@@ -36,7 +36,7 @@ jobs:
         - name: 1.2 EXECUTING THE PYTHON SCRIPT
           uses: ./.github/actions/action_1.2
         - name: file_renaming_to_HOMETASK_name
-          run: mv /home/runner/work/devops-school/devops-school/log.md /home/runner/work/devops-school/devops-school/${{ github.event.inputs.file_name }}"
+          run: mv /home/runner/work/devops-school/devops-school/log.md /home/runner/work/devops-school/devops-school/"${{ github.event.inputs.file_name }}"
         - name: file_content_changing_to_HOMETASK_value
           run: echo "${{ github.event.inputs.file_name }}">/home/runner/work/devops-school/devops-school/${{ github.event.inputs.file_name }}"
         - name: 1.3 DOWNLOAD ARTIFACT
