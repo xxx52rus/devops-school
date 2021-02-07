@@ -6,13 +6,12 @@ name: Manual workflow
 # or API.
 on:
   workflow_dispatch:
-    # Inputs the workflow accepts.
     inputs:
       name:
         # Friendly description to be shown in the UI instead of 'name'
-        description: 'Person to greet'
+        description: 'text_file_name'
         # Default value if no value is explicitly provided
-        default: 'World'
+        default: 'readme.txt'
         # Input has to be provided for the workflow to run
         required: true
 
